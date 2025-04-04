@@ -23,7 +23,7 @@ const Login = () => {
         <h2>ログイン</h2>
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
-        <FontAwesomeIcon icon={FaUserIcon} />
+        <FontAwesomeIcon icon={FaUserIcon} style={{marginRight: '8px'}}/>
         <TextField
           label="ユーザー名"
           type="text"
@@ -33,7 +33,7 @@ const Login = () => {
         />
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
-        <FontAwesomeIcon icon={FaKeyIcon} />
+        <FontAwesomeIcon icon={FaKeyIcon} style={{marginRight: '8px'}}/>
         <TextField
           label="パスワード"
           type={showPassword ? 'text' : 'password'}
