@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import IconButton from '@mui/material/IconButton';
-import { faUser as FaUserIcon, faKey as FaKeyIcon, faEyeSlash as FaEyeSlashIcon } from '@fortawesome/free-solid-svg-icons';
+import { faUser as FaUserIcon, faKey as FaKeyIcon, faEyeSlash as FaEyeSlashIcon, faEye as FaEyeIcon } from '@fortawesome/free-solid-svg-icons';
 import Button from '@mui/material/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -23,7 +23,7 @@ const Login = () => {
         <h2>ログイン</h2>
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
-        <FontAwesomeIcon icon={FaUserIcon} style={{marginRight: '8px'}}/>
+        <FontAwesomeIcon icon={FaUserIcon} style={{marginRight: '8px', fontSize: '150%'}}/>
         <TextField
           label="ユーザー名"
           type="text"
@@ -33,19 +33,21 @@ const Login = () => {
         />
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
-        <FontAwesomeIcon icon={FaKeyIcon} style={{marginRight: '8px'}}/>
+        <FontAwesomeIcon icon={FaKeyIcon} style={{marginRight: '8px', fontSize: '150%'}}/>
         <TextField
           label="パスワード"
           type={showPassword ? 'text' : 'password'}
           margin="normal"
           fullWidth
           placeholder="パスワードを入力してください"
-          InputProps={{
-            endAdornment: (
-              <IconButton onClick={() => setShowPassword(!showPassword)}>
-                <FontAwesomeIcon icon={FaEyeSlashIcon} />
-              </IconButton>
-            ),
+          slotProps={{
+            input: {
+              endAdornment: (
+                <IconButton onClick={() => setShowPassword(!showPassword)}>
+                  <FontAwesomeIcon icon={showPassword ? FaEyeSlashIcon : FaEyeIcon} />
+                </IconButton>
+              ),
+            }
           }}
         />
       </Box>
