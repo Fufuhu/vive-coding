@@ -1,17 +1,25 @@
 import React from 'react';
+import { Box, Button, TextField } from '@mui/material';
 
 const Login = () => {
   return (
-    <div className="login-container">
-      <h2>Login Screen Mock</h2>
-      <label htmlFor="username">Username:</label>
-      <input type="text" id="username" name="username" />
-      <br />
-      <label htmlFor="password">Password:</label>
-      <input type="password" id="password" name="password" />
-      <br />
-      <button type="submit">Login</button>
-    </div>
+    <Box display="flex" flexDirection="column" alignItems="center" justifyContent="flex-start"  bgcolor="grey.100" p={4} width="300px">
+      <TextField
+        label="Username"
+        type="text"
+        margin="normal"
+        fullWidth
+      />
+      <TextField
+        label="Password"
+        type="password"
+        margin="normal"
+        fullWidth
+      />
+      <Button variant="contained" color="primary" fullWidth>
+        Login
+      </Button>
+    </Box>
   );
 };
 
