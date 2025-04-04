@@ -3,7 +3,10 @@ import { FaUser, FaKey } from 'react-icons/fa';
 
 const Login = () => {
   return (
-    <Box display="flex" flexDirection="column" alignItems="center" justifyContent="flex-start"  bgcolor="grey.100" p={4} width="300px">
+      <Box display="flex" flexDirection="column" alignItems="center" justifyContent="flex-start"  bgcolor="grey.100" p={4} width="300px">
+        <Box>
+          <h2>ログイン</h2>
+        </Box>
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
         <FaUser style={{ marginRight: '10px', fontSize: '150%' }}/>
         <TextField
