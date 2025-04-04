@@ -1,7 +1,5 @@
-import React from 'react';
 import { Box, Button, TextField } from '@mui/material';
-import { FaUser } from 'react-icons/fa';
-import { FaKey } from 'react-icons/fa'; // Added import statement
+import { FaUser, FaKey } from 'react-icons/fa';
 
 const Login = () => {
   return (
