@@ -1,42 +1,56 @@
-import { Box, Button, TextField, IconButton } from '@mui/material';
-import { FaUser, FaKey, FaEyeSlash, FaEye } from 'react-icons/fa';
 import { useState } from 'react';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import IconButton from '@mui/material/IconButton';
+import { faUser as FaUserIcon, faKey as FaKeyIcon, faEyeSlash as FaEyeSlashIcon } from '@fortawesome/free-solid-svg-icons';
+import Button from '@mui/material/Button';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-      <Box display="flex" flexDirection="column" alignItems="center" justifyContent="flex-start"  bgcolor="grey.100" p={4} width="300px">
-        <Box>
-          <h2>ログイン</h2>
-        </Box>
+    <Box sx={{
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      bgcolor: 'grey.100',
+      p: 4,
+      width: '300px'
+    }}>
+      <Box>
+        <h2>ログイン</h2>
+      </Box>
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
-        <FaUser style={{ marginRight: '10px', fontSize: '150%' }}/>
+        <FontAwesomeIcon icon={FaUserIcon} />
         <TextField
-          label="Username"
+          label="ユーザー名"
           type="text"
           margin="normal"
           fullWidth
+          placeholder="ユーザー名を入力してください"
         />
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
-        <FaKey style={{ marginRight: '10px', fontSize: '150%' }} />
+        <FontAwesomeIcon icon={FaKeyIcon} />
         <TextField
-          label="Password"
-          type={showPassword ? "text" : "password"}
+          label="パスワード"
+          type={showPassword ? 'text' : 'password'}
           margin="normal"
           fullWidth
+          placeholder="パスワードを入力してください"
           InputProps={{
             endAdornment: (
               <IconButton onClick={() => setShowPassword(!showPassword)}>
-                {showPassword ? <FaEyeSlash /> : <FaEye />}
+                <FontAwesomeIcon icon={FaEyeSlashIcon} />
               </IconButton>
             ),
           }}
         />
       </Box>
       <Button variant="contained" color="primary" fullWidth>
-        Login
+        ログイン
       </Button>
     </Box>
   );
